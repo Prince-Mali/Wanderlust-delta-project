@@ -15,7 +15,7 @@
                         '<%= listing.description %>'<br>
                     </div>
                     <div class="mt-1">
-                        &#8377; <%= listing.price.toLocaleString("en-IN") %><br>
+                        &#8377; <%= listing.price.toLocaleString("en-IN") %>/-night<br>
                     </div>
                     <div class="mt-1">
                         <%= listing.location %><br>
@@ -36,10 +36,10 @@
         </div>
         <% if(currentUser) { %>
             <hr>
-            <div class="review show-card card col-6 offset-2 mt-3 ">
+            <div class="review-card card col-6 offset-2 mt-3 ">
                 <h4>Leave a Review</h4>
                 <form action="/listings/<%= listing._id %>/reviews" method="post" class="form needs-validation" novalidate>
-                    <div class=" mt-3 col-4">
+                    <div class="mt-3 col-4">
                         <label for="" class="mb-2">Rating :</label>
                         <fieldset class="starability-slot ">
                             <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
@@ -67,7 +67,7 @@
             </div>
         <% } %>
         <hr>
-        <div class="row w-75 reviews" style="margin-left: 13rem;">
+        <div class="row w-75 reviews show-card" style="margin-left: 13rem;">
             <% if (!listing.reviews.length) { %>
                 <h4 class="mt-3 mb-5"><b>No reviews (yet)</b></h4>
             <% } else { %>

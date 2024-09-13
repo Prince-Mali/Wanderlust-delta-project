@@ -1,7 +1,7 @@
 <%- layout('./layouts/boilerplate') %>
 <body>
     <div class="row">
-        <div class="col-8 offset-2">
+        <div class="col-8 offset-2 edit-form-container">
             <h2>Edit Listing</h2>
             <form action="/listings/<%= listing._id %>?_method=PUT" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
                 <div class="mb-3">
@@ -52,7 +52,6 @@
                         <div class="invalid-feedback">Please enter your country.</div>
                     </div>
                 </div>
-                <div class="mb-3">
                 <div class="mb-3">
                     <input class="btn btn-dark" type="submit" value="Update">
                 </div>
